@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/xmas
+    username: postgresusr
+    password: 2%sZa*[g(@3D
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+flyway:
+  url: jdbc:postgresql://localhost:5432/xmas
+  schema: xmas
+  user: postgresusr
+  password: 2%sZa*[g(@3D
