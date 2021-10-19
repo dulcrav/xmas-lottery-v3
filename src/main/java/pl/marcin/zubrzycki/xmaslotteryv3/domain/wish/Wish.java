@@ -21,4 +21,14 @@ public class Wish {
         this.user = user;
         this.name = name;
     }
+
+    public Wish() {}
+
+    public String getUser() {
+        return user.getId().toString();
+    }
+
+    public String getName() {
+        return name;
+    }
 }

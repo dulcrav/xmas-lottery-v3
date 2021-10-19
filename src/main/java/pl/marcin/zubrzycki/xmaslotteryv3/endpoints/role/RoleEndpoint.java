@@ -1,4 +1,4 @@
-package pl.marcin.zubrzycki.xmaslotteryv3.endpoints;
+package pl.marcin.zubrzycki.xmaslotteryv3.endpoints.role;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

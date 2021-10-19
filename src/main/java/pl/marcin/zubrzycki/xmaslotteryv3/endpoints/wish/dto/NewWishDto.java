@@ -1,10 +1,10 @@
-package pl.marcin.zubrzycki.xmaslotteryv3.endpoints.dto;
+package pl.marcin.zubrzycki.xmaslotteryv3.endpoints.wish.dto;
 
-public class WishDto {
+public class NewWishDto {
     private Long userId;
     private String name;
 
-    private WishDto(Long userId, String name) {
+    private NewWishDto(Long userId, String name) {
         this.userId = userId;
         this.name = name;
     }
