@@ -24,6 +24,10 @@ public class Wish {
 
     public Wish() {}
 
+    public Long getId() {
+        return id;
+    }
+
     public String getUser() {
         return user.getId().toString();
     }
