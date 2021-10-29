@@ -24,11 +24,11 @@ public class LotteryResults {
         this.drawnUser = drawnUser;
     }
 
-    public String getUser() {
-        return userPlayer.getUsername();
+    public User getUser() {
+        return userPlayer;
     }
 
-    public String getDrawnUser() {
-        return drawnUser.getUsername();
+    public User getDrawnUser() {
+        return drawnUser;
     }
 }
