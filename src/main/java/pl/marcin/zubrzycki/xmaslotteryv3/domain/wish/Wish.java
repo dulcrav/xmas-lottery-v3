@@ -32,6 +32,10 @@ public class Wish {
         return user.getId().toString();
     }
 
+    public String getUsername() {
+        return user.getUsername();
+    }
+
     public String getName() {
         return name;
     }

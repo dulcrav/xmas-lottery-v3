@@ -37,6 +37,12 @@ public class WishesController {
         return ResponseEntity.ok(getWishes.execute(userId));
     }
 
+    @GetMapping("/all-wishes")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<List<Wish>> findAllWishes() {
+        return ResponseEntity.ok(getWishes.executeForAll());
+    }
+
     @DeleteMapping("/delete")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<Void> deleteWishById(@RequestParam Long wishId) {

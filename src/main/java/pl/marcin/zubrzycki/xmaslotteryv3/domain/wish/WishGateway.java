@@ -8,4 +8,6 @@ public interface WishGateway {
     Wish save(Wish wish);
 
     List<Wish> findAllByUser(User user);
+
+    List<Wish> findAll();
 }

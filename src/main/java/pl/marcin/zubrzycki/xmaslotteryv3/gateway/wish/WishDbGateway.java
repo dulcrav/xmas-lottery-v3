@@ -24,4 +24,9 @@ public class WishDbGateway implements WishGateway {
     public List<Wish> findAllByUser(User user) {
         return wishRepository.findAllByUser(user);
     }
+
+    @Override
+    public List<Wish> findAll() {
+        return wishRepository.findAll();
+    }
 }

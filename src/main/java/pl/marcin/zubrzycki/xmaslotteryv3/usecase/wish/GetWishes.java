@@ -22,4 +22,8 @@ public class GetWishes {
                 .map(wishGateway::findAllByUser)
                 .orElse(null);
     }
+
+    public List<Wish> executeForAll() {
+        return wishGateway.findAll();
+    }
 }
