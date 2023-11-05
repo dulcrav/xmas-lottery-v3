@@ -14,4 +14,8 @@ public class DeleteWish {
     public void execute(Long wishId) {
         wishRepository.deleteById(wishId);
     }
+
+    public void executeForAll() {
+        wishRepository.deleteAll();
+    }
 }

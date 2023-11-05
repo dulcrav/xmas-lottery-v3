@@ -1,5 +1,6 @@
 package pl.marcin.zubrzycki.xmaslotteryv3.gateway.user;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.marcin.zubrzycki.xmaslotteryv3.domain.user.User;
 import pl.marcin.zubrzycki.xmaslotteryv3.domain.user.UserGateway;
@@ -10,9 +11,11 @@ import java.util.Optional;
 @Service
 public class UserDbGateway implements UserGateway {
     private final UserRepository repository;
+    private final PasswordEncoder encoder;
 
-    public UserDbGateway(UserRepository repository) {
+    public UserDbGateway(UserRepository repository, PasswordEncoder passwordEncoder) {
         this.repository = repository;
+        this.encoder = passwordEncoder;
     }
 
     @Override
@@ -33,5 +36,13 @@ public class UserDbGateway implements UserGateway {
     @Override
     public List<User> findAllUsers() {
         return repository.findAll();
+    }
+
+    @Override
+    public void changePassword(Long id, String password) {
+        repository.findById(id).ifPresent(user -> {
+            user.setPassword(encoder.encode(password));
+            repository.save(user);
+        });
     }
 }

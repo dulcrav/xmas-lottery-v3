@@ -11,4 +11,6 @@ public interface UserGateway {
     Boolean existsByUsername(String username);
 
     List<User> findAllUsers();
+
+    void changePassword(Long id, String password);
 }
