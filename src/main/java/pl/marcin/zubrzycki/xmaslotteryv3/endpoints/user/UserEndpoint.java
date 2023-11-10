@@ -36,7 +36,7 @@ public class UserEndpoint {
     }
 
     @PatchMapping("/changePassword")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<Void> changePassword(@RequestParam Long userId, @RequestBody ChangePasswordDto changePasswordDto) {
         changePassword.execute(userId, changePasswordDto);
         return ResponseEntity.ok().build();
